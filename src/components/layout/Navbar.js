@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import SignedInLinks from "./SignedInLinks";
+import SignedOutLinks from "./SignedOutLinks";
 class Navbar extends Component {
   render() {
     return (
@@ -9,6 +11,8 @@ class Navbar extends Component {
           <Link to="/" className="brand-logo">
             Kaizen
           </Link>
+          <SignedInLinks />
+          <SignedOutLinks />
         </div>
       </nav>
     );
