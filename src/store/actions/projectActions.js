@@ -7,7 +7,7 @@ export const createProject = (project) => {
       .add({
         ...project,
         authorFirstName: "deepak",
-        authorLastname: "kumar",
+        authorLastName: "kumar",
         authorId: 12345,
         createdAt: new Date(),
       })

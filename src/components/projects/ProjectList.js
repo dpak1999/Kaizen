@@ -1,16 +1,20 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import ProjectSummary from "./ProjectSummary";
 
 class ProjectList extends Component {
   render() {
-    // console.log(this.props);
     const { projects } = this.props;
     return (
       <div className="project-list section">
         {projects &&
           projects.map((project) => {
-            return <ProjectSummary project={project} key={project.id} />;
+            return (
+              <Link to={"/project/" + project.id}>
+                <ProjectSummary project={project} key={project.id} />
+              </Link>
+            );
           })}
       </div>
     );
