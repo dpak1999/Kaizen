@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Profiler } from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -16,7 +16,7 @@ class SignedInLinks extends Component {
         </li>
         <li>
           <NavLink to="/" className="btn btn-floating pink lighten-1">
-            DD
+            {this.props.profile.initials}
           </NavLink>
         </li>
       </ul>

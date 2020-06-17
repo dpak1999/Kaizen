@@ -28,14 +28,22 @@ const store = createStore(
   )
 );
 
+const profileSpecificProps = {
+  userProfile: "users",
+  useFirestoreForProfile: true,
+  enableRedirectHandling: false,
+  resetBeforeLogin: false,
+};
+
 const rrfProps = {
   firebase,
-  config: fbConfig,
+  config: (fbConfig, profileSpecificProps),
+  // config: profileSpecificProps,
   dispatch: store.dispatch,
   createFirestoreInstance,
-  userProfile: "users",
-  presence: "presence",
-  sessions: "sessions",
+  // userProfile: "users",
+  // presence: "presence",
+  // sessions: "sessions",
 };
 
 function AuthIsLoaded({ children }) {
