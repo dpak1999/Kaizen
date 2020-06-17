@@ -21,7 +21,7 @@ class ProjectDetails extends Component {
               <div>
                 Posted by {project.authorFirstName} {project.authorLastName}
               </div>
-              <div>2nd sept, 2pm</div>
+              <div>{project.createdAt.toDate().toDateString()}</div>
             </div>
           </div>
         </div>

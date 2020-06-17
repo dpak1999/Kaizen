@@ -10,7 +10,9 @@ class ProjectSummary extends Component {
           <p>
             Posted by {project.authorFirstName} {project.authorLastName}
           </p>
-          <p className="grey-text">3rd September, 5Am</p>
+          <p className="grey-text">
+            {project.createdAt.toDate().toDateString()}
+          </p>
         </div>
       </div>
     );
