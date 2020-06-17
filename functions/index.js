@@ -26,3 +26,15 @@ exports.projectCreated = functions.firestore
     };
     return createNotification(notification);
   });
+
+exports.userJoined = functions.firestore
+  .document("users/{uid}")
+  .onCreate((doc) => {
+    const user = doc.data();
+    const notification = {
+      content: "Joined the party",
+      user: `${user.firstName} ${user.lastName}`,
+      time: admin.firestore.FieldValue.serverTimestamp(),
+    };
+    return createNotification(notification);
+  });
